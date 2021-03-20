@@ -3,24 +3,24 @@ import styled from 'styled-components'
 const Header = () => {
     return (
         <HeaderDiv className="header">
-            <div className="header_left">
+            <HeaderLeft className="header_left">
                 <img className="header_logo"
                      src="https://pngimg.com/uploads/twitch/twitch_PNG6.png"
                      alt="twitch logo"/>
-                <h2>Following</h2>
+                
                 <h2>Browse</h2>
                 <div className="header_verticalLine"></div>
                 <h3>Esports</h3>
                 <h2>Music</h2>
-            </div>
+            </HeaderLeft>
 
-            <div className="header_center">
-                <InputContainer className="input-container">
+            <HeaderCenter >
+                <InputContainer >
                 <input className="input" placeholder="Search"/>
                 
                 <i class="fas fa-search  fa-2x"/>
                 </InputContainer>
-            </div>
+            </HeaderCenter>
 
             <div className="header_right">
 
@@ -35,6 +35,15 @@ export default Header;
 const HeaderDiv = styled.div`
 display:flex;
 flex:1;
+width:100%;
+height:100px;
+align-items:center;
+
+`;
+const HeaderLeft=styled.div`
+flex:1;
+
+display:flex;
 .header_logo{
     
     height:40px;
@@ -43,6 +52,7 @@ flex:1;
 }
 `;
 
+const HeaderCenter = styled.div``;
 
 const InputContainer = styled.div`
 width:400px;
@@ -55,14 +65,15 @@ align-items:center;
 
 >input{
     height:100% ;
-    width:90%;
+    width:100%;
     outline:none;
     border:none;
     font-size:18px;
 }
 
 >i{
-    width:13%;
+    background-color:gray;
+    font-size:30px;
     margin-right:7px;
    opacity:0.3;
 }
