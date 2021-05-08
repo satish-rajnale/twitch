@@ -14,6 +14,43 @@ export const Container = styled.div`
 
 `;
 
+export const MenuBar = styled.div`
+height:80vh;
+width:9rem;
+position:absolute;
+display:flex;
+flex-direction:column;
+padding:5px;
+border-radius:8px;
+border:1px solid #101011;
+background-color: var(--light-background);
+top:0.9rem;
+left:14.9rem;
+transform:translate(-50%, 4%);
+z-index:33;
+color:white;
+  h5{
+    color:gray;
+    margin:10px 10px;
+  }
+  button{
+    text-align:left;
+    padding:0.2rem;
+    font-size:0.8em;
+    margin:0 5px;
+    background:none;
+    color:white;
+
+    height:36px;
+    border-radius:5px;
+    :hover{
+      background-color:#3a3a3d;
+    }
+  }
+
+
+`;
+
 export const LeftMenu = styled.div`
   display: flex;
   flex-direction: row;
