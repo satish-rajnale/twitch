@@ -1,3 +1,3 @@
-# Building My ultimate clone of Twitch streams
+# Building front end ui Twitch streams
 
 
