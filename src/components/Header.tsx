@@ -4,8 +4,8 @@ import { BsThreeDots, BsChatSquare } from "react-icons/bs";
 import { AiOutlineInbox } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import IconButton from "./smallComps/IconButton";
-// import ToolTip from "./smallComps/ToolTip/ToolTip";
-import {Icon , Popup } from "semantic-ui-react";
+import ToolTip from "./smallComps/ToolTip/ToolTip";
+import { Icon, Popup } from "semantic-ui-react";
 import {
   AccountContainer,
   Container,
@@ -72,44 +72,28 @@ const Header: React.FC = () => {
         </div>
       </MiddleMenu>
       <RightMenu>
-        <IconButton>
-         
-          <Popup
-            trigger={ <AiOutlineInbox size={22} />}
-            content="Notifications"
-            style={{color:"black",padding:"5px",fontWeight:700,margin:"6px", backgroundColor:"white" }}
-            position='bottom center'
-          />
-        </IconButton>
-        <IconButton>
-          <Popup
-            trigger={<BsChatSquare size={18} />}
-            content="Chat"
-            style={{color:"black",padding:"5px",fontWeight:700,margin:"8px", backgroundColor:"white"}}
-            position='bottom center'
-          />
-        </IconButton>
-        <IconButton>
-          {" "}
-          <Popup
-            trigger={<CgCrown size={24} />}
-            content="Bits"
-            style={{color:"black",padding:"5px",fontWeight:700,margin:"6px", backgroundColor:"white" }}
-            position='bottom center'
-          />
-          
-        </IconButton>
-        {/* <OverlayTrigger
-          key="bottom"
-          placement="bottom"
-          overlay={
-            <Tooltip style={{ background: "red" }} id={`tooltip-bottom`}>
-              Tooltip on <strong>bottom</strong>.
-            </Tooltip>
-          }
-        >
-          <Button variant="secondary">Tooltip on</Button>
-        </OverlayTrigger> */}
+        <ToolTipContainer>
+          <IconButton>
+            <AiOutlineInbox size={22} />
+          </IconButton>
+          <ToolTipText style={{ left: "-1.6em" }}>Notifications</ToolTipText>
+        </ToolTipContainer>
+
+        <ToolTipContainer>
+          <IconButton>
+            <BsChatSquare size={18} />
+          </IconButton>
+          <ToolTipText style={{}}>Chats</ToolTipText>
+        </ToolTipContainer>
+
+        <ToolTipContainer>
+          <IconButton>
+            <CgCrown size={24} />
+          </IconButton>
+          <ToolTipText style={{ left: "0.3em" }}>Bits</ToolTipText>
+        </ToolTipContainer>
+
+    
         <MyButton buttonType="secondary">Log In</MyButton>
         <MyButton buttonType="primary">Sign Up</MyButton>
         <AccountContainer>

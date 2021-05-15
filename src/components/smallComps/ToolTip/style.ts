@@ -1,26 +1,28 @@
 import styled from "styled-components";
 
-export const ToolTipContainer  = styled.div`
+export const ToolTipContainer = styled.div`
   position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-:hover > span {
-  visibility: visible;
-  
-}
-`
+  display: block;
+  align-items: center;
 
-export const ToolTipText = styled.span`
- visibility: hidden;
-  font-size:15px;
+  :hover > div {
+    visibility: visible;
+  }
+`;
 
-  background-color: black;
-  color: #fff;
+export const ToolTipText = styled.div`
+  visibility: hidden;
+  font-size: 15px;
+
+  font-weight: 700;
+  padding: 6px;
+  margin-top: 8px;
+  background-color: white;
+  color: black;
   text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
+  border-radius: 3px;
 
   /* Position the tooltip */
   position: absolute;
-  z-index: 1;
-`
+  z-index: 12;
+`;
