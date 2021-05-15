@@ -73,19 +73,31 @@ const Header: React.FC = () => {
       </MiddleMenu>
       <RightMenu>
         <IconButton>
-          <AiOutlineInbox size={22} />
+         
+          <Popup
+            trigger={ <AiOutlineInbox size={22} />}
+            content="Notifications"
+            style={{color:"black",padding:"5px",fontWeight:700,margin:"6px", backgroundColor:"white" }}
+            position='bottom center'
+          />
         </IconButton>
         <IconButton>
           <Popup
             trigger={<BsChatSquare size={18} />}
-            content="chat"
-            style={{color:"black", borderRadius: "3px",padding:"2px", backgroundColor:"whitesmoke",clipPath: "polygon(51% 0, 65% 17%, 100% 18%, 100% 100%, 0 100%, 0 19%, 34% 18%)" }}
+            content="Chat"
+            style={{color:"black",padding:"5px",fontWeight:700,margin:"8px", backgroundColor:"white"}}
             position='bottom center'
           />
         </IconButton>
         <IconButton>
           {" "}
-          <CgCrown size={24} />
+          <Popup
+            trigger={<CgCrown size={24} />}
+            content="Bits"
+            style={{color:"black",padding:"5px",fontWeight:700,margin:"6px", backgroundColor:"white" }}
+            position='bottom center'
+          />
+          
         </IconButton>
         {/* <OverlayTrigger
           key="bottom"
