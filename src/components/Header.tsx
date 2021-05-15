@@ -1,20 +1,22 @@
 import { FiSearch } from "react-icons/fi";
 import { CgCrown } from "react-icons/cg";
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsChatSquare } from "react-icons/bs";
 import { AiOutlineInbox } from "react-icons/ai";
-import { BsChatSquare } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
+import IconButton from "./smallComps/IconButton";
+// import ToolTip from "./smallComps/ToolTip/ToolTip";
+import {Icon , Popup } from "semantic-ui-react";
 import {
-  MenuBar,
   AccountContainer,
-  IconContainer,
   Container,
   LeftMenu,
   MiddleMenu,
   RightMenu,
 } from "../styles/components/Header";
-import Button from "./Button";
+import MyButton from "./Button";
 import { useState } from "react";
+import GlobalMenu from "./smallComps/GlobalMenu";
+import { ToolTipContainer, ToolTipText } from "./smallComps/ToolTip/style";
 
 const Header: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
@@ -40,29 +42,12 @@ const Header: React.FC = () => {
           onClick={openMenu}
           style={{ background: "none", width: "30px" }}
         >
-          <IconContainer>
+          <IconButton>
             {" "}
             <BsThreeDots style={{ color: "white" }} />
-          </IconContainer>
+          </IconButton>
         </button>
-        {isOpen && (
-          <MenuBar>
-            <h5>GENERAL</h5>
-            <button>About</button>
-            <button> Advertisers </button>
-            <button> Blog </button>
-            <button> Developers </button>
-            <button> Download Apps </button>
-            <button> Gift Card </button>
-            <button> IGDB </button>
-            <button> Jobs </button>
-            <button> Partners </button>
-            <button> Music on Twitch </button>
-            <button> Loot Cave - Store </button>
-            <button> Press </button>
-            <button> Turbo </button>
-          </MenuBar>
-        )}
+        {isOpen && <GlobalMenu />}
       </LeftMenu>
       <MiddleMenu>
         <div>
@@ -87,18 +72,34 @@ const Header: React.FC = () => {
         </div>
       </MiddleMenu>
       <RightMenu>
-        <IconContainer>
+        <IconButton>
           <AiOutlineInbox size={22} />
-        </IconContainer>
-        <IconContainer>
-          <BsChatSquare size={18} />
-        </IconContainer>
-        <IconContainer>
+        </IconButton>
+        <IconButton>
+          <Popup
+            trigger={<BsChatSquare size={18} />}
+            content="chat"
+            style={{color:"black", borderRadius: "3px",padding:"2px", backgroundColor:"whitesmoke",clipPath: "polygon(51% 0, 65% 17%, 100% 18%, 100% 100%, 0 100%, 0 19%, 34% 18%)" }}
+            position='bottom center'
+          />
+        </IconButton>
+        <IconButton>
           {" "}
           <CgCrown size={24} />
-        </IconContainer>
-        <Button buttonType="secondary">Log In</Button>
-        <Button buttonType="primary">Sign Up</Button>
+        </IconButton>
+        {/* <OverlayTrigger
+          key="bottom"
+          placement="bottom"
+          overlay={
+            <Tooltip style={{ background: "red" }} id={`tooltip-bottom`}>
+              Tooltip on <strong>bottom</strong>.
+            </Tooltip>
+          }
+        >
+          <Button variant="secondary">Tooltip on</Button>
+        </OverlayTrigger> */}
+        <MyButton buttonType="secondary">Log In</MyButton>
+        <MyButton buttonType="primary">Sign Up</MyButton>
         <AccountContainer>
           <FaUserCircle size={34} color="#625f5f" fill="#625f5f" />
         </AccountContainer>

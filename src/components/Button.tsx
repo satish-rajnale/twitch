@@ -4,7 +4,7 @@ interface ButtonProps {
   buttonType: 'primary' | 'secondary';
 }
 
-const Button: React.FC<ButtonProps> = ({
+const MyButton: React.FC<ButtonProps> = ({
   children,
   buttonType,
   ...rest
@@ -16,4 +16,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default MyButton;
