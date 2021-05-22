@@ -2,9 +2,13 @@ import React from 'react'
 import {
     MenuBar,
   } from "../../styles/components/Header";
-function GlobalMenu() {
+
+
+
+
+function GlobalMenu({id}) {
     return (
-        <MenuBar>
+        <MenuBar id={id}>
         <h5>GENERAL</h5>
         <button>About</button>
         <button> Advertisers </button>

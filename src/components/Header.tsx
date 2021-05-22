@@ -5,7 +5,7 @@ import { AiOutlineInbox } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import IconButton from "./smallComps/IconButton";
 import ToolTip from "./smallComps/ToolTip/ToolTip";
-import { Icon, Popup } from "semantic-ui-react";
+
 import {
   AccountContainer,
   Container,
@@ -16,25 +16,29 @@ import {
 import MyButton from "./Button";
 import { useState } from "react";
 import GlobalMenu from "./smallComps/GlobalMenu";
-import { ToolTipContainer, ToolTipText } from "./smallComps/ToolTip/style";
+// import { ToolTip.ToolTipContainer, ToolTipText } from "./smallComps/ToolTip/style";
 
 const Header: React.FC = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isGlobalMenuOpen, setGlobalMenuOpen] = useState(false);
 
   const openMenu = () => {
-    setOpen(!isOpen);
+    setGlobalMenuOpen(!isGlobalMenuOpen);
+   
   };
 
   return (
-    <Container>
+    <Container >
       <LeftMenu>
         <img src="/favicon.svg" alt="Twitch Clone" width="32" height="32" />
         <ul>
           <li>
-            <a href="#">Following</a>
+            <a href="#">Browse</a>
           </li>
           <li>
-            <a href="#">Browse</a>
+            <a href="#">ESports</a>
+          </li>
+          <li>
+            <a href="#">Music</a>
           </li>
         </ul>
 
@@ -47,7 +51,7 @@ const Header: React.FC = () => {
             <BsThreeDots style={{ color: "white" }} />
           </IconButton>
         </button>
-        {isOpen && <GlobalMenu />}
+        {isGlobalMenuOpen && <GlobalMenu id="GlobalMenu"/>}
       </LeftMenu>
       <MiddleMenu>
         <div>
@@ -56,6 +60,7 @@ const Header: React.FC = () => {
             id="search"
             type="text"
             placeholder="Search"
+            onFocus={()=> setGlobalMenuOpen(false)}
           />
           <label aria-label="search" htmlFor="search">
             Search
@@ -72,26 +77,26 @@ const Header: React.FC = () => {
         </div>
       </MiddleMenu>
       <RightMenu>
-        <ToolTipContainer>
+        <ToolTip>
           <IconButton>
             <AiOutlineInbox size={22} />
           </IconButton>
-          <ToolTipText style={{ left: "-1.6em" }}>Notifications</ToolTipText>
-        </ToolTipContainer>
+          <ToolTip.ToolTipText style={{ left: "-1.6em" }}>Notifications</ToolTip.ToolTipText>
+        </ToolTip>
 
-        <ToolTipContainer>
+        <ToolTip>
           <IconButton>
             <BsChatSquare size={18} />
           </IconButton>
-          <ToolTipText style={{}}>Chats</ToolTipText>
-        </ToolTipContainer>
+          <ToolTip.ToolTipText style={{}}>Chats</ToolTip.ToolTipText>
+        </ToolTip>
 
-        <ToolTipContainer>
+        <ToolTip>
           <IconButton>
             <CgCrown size={24} />
           </IconButton>
-          <ToolTipText style={{ left: "0.3em" }}>Bits</ToolTipText>
-        </ToolTipContainer>
+          <ToolTip.ToolTipText style={{ left: "0.3em" }}>Bits</ToolTip.ToolTipText>
+        </ToolTip>
 
     
         <MyButton buttonType="secondary">Log In</MyButton>
