@@ -1,11 +1,14 @@
 import React from 'react'
 import {Container, SideBar} from "./MainBody"
-function MainBody() {
+export default function MainBody() {
     return (
         <Container>
-            <SideBar/>
+            <SideBar>
+                side
+            </SideBar>
+            sfdgdrgdrgv
         </Container>
     )
 }
 
-export default MainBody
+ 
