@@ -2,7 +2,7 @@
 
 
 To use run command
-```shell
+```yaml
 npm run dev
 // or
 yarm run dev
