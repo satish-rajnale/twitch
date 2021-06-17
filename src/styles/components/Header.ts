@@ -11,7 +11,7 @@ export const Container = styled.div`
   top: 0;
   height: 55px;
   font-size: 0.8rem;
-
+position:fixed;
 `;
 
 export const MenuBar = styled.div`
