@@ -11,13 +11,14 @@ export const Container = styled.div`
   top: 0;
   height: 55px;
   font-size: 0.8rem;
+  padding-left: 10px;
   position: fixed;
 `;
 
 export const MenuBar = styled.div`
   height: 80vh;
   width: 9rem;
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   padding: 5px;

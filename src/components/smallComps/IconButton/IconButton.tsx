@@ -1,11 +1,7 @@
-import React from 'react'
-import {IconContainer} from "./style"
-function IconButton({children}) {
-    return (
-        <IconContainer>
-            {children}
-        </IconContainer>
-    )
+import React from "react";
+import { IconContainer } from "./style";
+function IconButton({ children }) {
+  return <IconContainer>{children}</IconContainer>;
 }
 
-export default IconButton
+export default IconButton;

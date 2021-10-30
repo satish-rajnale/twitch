@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const IconContainer = styled.button`
+export const IconContainer = styled.div`
   color: #fff;
   font-weight: bold;
   border: none;
