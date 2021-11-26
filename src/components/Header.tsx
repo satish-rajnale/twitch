@@ -23,11 +23,10 @@ const Header: React.FC = () => {
 
   const openMenu = () => {
     setGlobalMenuOpen(!isGlobalMenuOpen);
-   
   };
 
   return (
-    <Container >
+    <Container>
       <LeftMenu>
         <img src="/favicon.svg" alt="Twitch Clone" width="32" height="32" />
         <ul>
@@ -51,7 +50,7 @@ const Header: React.FC = () => {
             <BsThreeDots style={{ color: "white" }} />
           </IconButton>
         </button>
-        {isGlobalMenuOpen && <GlobalMenu id="GlobalMenu"/>}
+        {isGlobalMenuOpen && <GlobalMenu id="GlobalMenu" />}
       </LeftMenu>
       <MiddleMenu>
         <div>
@@ -60,7 +59,7 @@ const Header: React.FC = () => {
             id="search"
             type="text"
             placeholder="Search"
-            onFocus={()=> setGlobalMenuOpen(false)}
+            onFocus={() => setGlobalMenuOpen(false)}
           />
           <label aria-label="search" htmlFor="search">
             Search
@@ -81,7 +80,9 @@ const Header: React.FC = () => {
           <IconButton>
             <AiOutlineInbox size={22} />
           </IconButton>
-          <ToolTip.ToolTipText style={{ left: "-1.6em" }}>Notifications</ToolTip.ToolTipText>
+          <ToolTip.ToolTipText style={{ left: "-1.6em" }}>
+            Notifications
+          </ToolTip.ToolTipText>
         </ToolTip>
 
         <ToolTip>
@@ -95,10 +96,11 @@ const Header: React.FC = () => {
           <IconButton>
             <CgCrown size={24} />
           </IconButton>
-          <ToolTip.ToolTipText style={{ left: "0.3em" }}>Bits</ToolTip.ToolTipText>
+          <ToolTip.ToolTipText style={{ left: "0.3em" }}>
+            Bits
+          </ToolTip.ToolTipText>
         </ToolTip>
 
-    
         <MyButton buttonType="secondary">Log In</MyButton>
         <MyButton buttonType="primary">Sign Up</MyButton>
         <AccountContainer>

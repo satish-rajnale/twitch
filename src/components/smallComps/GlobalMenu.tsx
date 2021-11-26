@@ -1,14 +1,10 @@
-import React from 'react'
-import {
-    MenuBar,
-  } from "../../styles/components/Header";
+import React from "react";
+import { MenuBar } from "../../styles/components/Header";
 
-
-
-
-function GlobalMenu({id}) {
-    return (
-        <MenuBar id={id}>
+function GlobalMenu({ id }) {
+  return (
+    <>
+      <MenuBar id={id}>
         <h5>GENERAL</h5>
         <button>About</button>
         <button> Advertisers </button>
@@ -24,7 +20,8 @@ function GlobalMenu({id}) {
         <button> Press </button>
         <button> Turbo </button>
       </MenuBar>
-    )
+    </>
+  );
 }
 
-export default GlobalMenu
+export default GlobalMenu;
